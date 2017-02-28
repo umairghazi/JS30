@@ -22,7 +22,7 @@
         text-align: center;
         font-size: 10px;
     }
-    
+
     body {
         font-size: 2rem;
         display: flex;
@@ -30,7 +30,7 @@
         min-height: 100vh;
         align-items: center;
     }
-    
+
     .clock {
         width: 30rem;
         height: 30rem;
@@ -41,7 +41,7 @@
         padding: 2rem;
         box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
     }
-    
+
     .clock-face {
         position: relative;
         width: 100%;
@@ -49,7 +49,7 @@
         transform: translateY(-3px);
         /* account for the height of the clock hands */
     }
-    
+
     .hand {
         width: 50%;
         height: 6px;
@@ -62,16 +62,17 @@
     const hrHand = document.querySelector('.hour-hand');
     const secondHand = document.querySelector('.second-hand');
     const minuteHand = document.querySelector('.min-hand');
-    
+
     secondHand.style.transformOrigin = "right";
     minuteHand.style.transformOrigin = "right";
     hrHand.style.transformOrigin = "right";
-    
+
 
     setInterval(function() {
       var d = new Date();
       let currentSecDegs = (d.getSeconds() * 6);
-      let currentMinDegs = (d.getMinutes() * 0.1);
+      let currentMinDegs = (d.getMinutes() * 1);
+
       // let currentHrDegs = (d.getMinutes() * 0.1);
       secondHand.style.transform = "rotate(" + currentSecDegs +"deg)";
       minuteHand.style.transform = "rotate(" + currentMinDegs +"deg)";
@@ -83,13 +84,13 @@
     //   let currentDegs = (d.getMinutes() * 6);
     //   minuteHand.style.transform = "rotate(" + currentDegs +"deg)";
     // }, 60000);
-    
+
     // setInterval(function() {
     //   var d = new Date();
     //   let currentDegs = (d.getMinutes() * 6);
     //   hrHand.style.transform = "rotate(" + currentDegs +"deg)";
     // }, 3600000);
-    
+
 
     </script>
 </body>
